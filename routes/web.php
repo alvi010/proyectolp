@@ -28,10 +28,12 @@ Route::post('/home', [App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get("/usuario/perfil",[UsuarioController::class,"perfil"])->name('perfil');
 Route::get("/usuario/actualizarPerfil",[UsuarioController::class,"actualizarPerfil"]);
 
+Route::get("/usuario/publicacion",[DelitoController::class,"crear"]);
+Route::post("/usuario/publicacion",[DelitoController::class,"guardar"]);
 
-
-
+Route::get("/publicaciones",[DelitoController::class,"mostrarDatosGuardados"]);
 Route::get("/perfil",[UsuarioController::class,"perfil"]);
 
 Route::get("/policia/comisaria",[PoliciaController::class,"mostrarComisaria"]);
+Route::get("/policia/delito",[PoliciaController::class,"mostrarDelitos"]);
 
